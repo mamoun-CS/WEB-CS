@@ -1,95 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mamoun Adle Khanfa - CV</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamoun Khanfa - Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+        }
+        .project {
+            margin-bottom: 15px;
+        }
+        .project-title {
+            font-weight: bold;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        @media print {
+            body {
+                font-size: 12pt;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="cv-container">
-    <header>
-      <h1>Mamoun Adle Khanfa</h1>
-      <p><strong>Location:</strong> Nablus, West Bank, Palestine</p>
-      <p><strong>Phone:</strong> +972598897496 </p>
-      <p><strong>Email:</strong> mamounkhanfa5@gmail.com</p>
-      <p><strong>Date of Birth:</strong> 30/10/2001</p>
-      <p><strong>Nationality:</strong> Palestinian</p>
-    </header>
+    <h1>Mamoun Adle Khanfa</h1>
+    <div><strong>Frontend / Full-Stack Web Developer</strong></div>
+    
+    <div class="contact-info">
+        <span>📌 Nablus, West Bank, Palestine</span>
+        <span>📍 +972 598 897 496</span>
+        <span>💡 mamounkhanfa5@gmail.com</span>
+        <span>👍 GitHub: <a href="https://github.com/mamoun-CS" target="_blank">mamoun-CS</a></span>
+        <span>LinkedIn: <a href="https://linkedin.com/in/mamoun-khanfa-178717349/" target="_blank">mamoun-khanfa</a></span>
+    </div>
 
-    <section>
-      <h2>Preferred Job</h2>
-      <p>Full Stack Web Developer</p>
-    </section>
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Certified Frontend Developer with expertise in HTML5 and CSS3, specializing in React and Node.js development.</p>
+        <p>Passionate about building responsive, user-friendly web applications with 3+ years of hands-on experience.</p>
+        <p>Strong background in full-stack development, UI/UX principles, and project deployment.</p>
+    </div>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>T4student:</strong> Quiz platform with AI for topic analysis and exam generation.</li>
-        <li><strong>Jaltah Burger:</strong> Restaurant website with delivery and table reservations.</li>
-      </ul>
-    </section>
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <strong>Frontend:</strong><br>
+                HTML5 (Certified) | CSS3 (Certified)<br>
+                JavaScript (ES6+) | TypeScript<br>
+                React.js | Redux | React Router<br>
+                Tailwind CSS | Bootstrap
+            </div>
+            <div class="skill-category">
+                <strong>Backend:</strong><br>
+                Node.js | Express.js<br>
+                REST API Development
+            </div>
+            <div class="skill-category">
+                <strong>Databases:</strong><br>
+                PostgreSQL | MySQL
+            </div>
+            <div class="skill-category">
+                <strong>Tools & Platforms:</strong><br>
+                Git/GitHub | Postman | VS Code<br>
+                Figma | Vercel | Render
+            </div>
+        </div>
+    </div>
 
-    <section>
-      <h2>Education & Training</h2>
-      <ul>
-        <li><strong>Najah University</strong>
-          <ul>
-            <li>Data Structures for Large Number Languages</li>
-            <li>2 year freelance experience in Node.js, JavaScript, HTML, CSS, Angular,React</li>
-            <li>1 year freelance experience in C++, Java, Python</li>
-            <li>1 year freelance experience in SQL</li>
-             <li>1 year freelance experience in Angular</li>
-            <li>1 year freelance experience in Digital Marketing</li>
-          </ul>
-        </li>
-        <li><strong>Udemy Course:</strong> <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-fc80116e-557c-409b-95f2-e76caecff381.jpg" target="_blank">View Certificate</a></li>
-      </ul>
-    </section>
+    <div class="section">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Mastering HTML5: From Beginner to Advanced – Udemy, July 2025<br>
+                <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-6f4a6152-759b-4dc8-be36-2ad5465a393a.pdf" target="_blank">View Certificate</a>
+            </li>
+            <li>CSS Complete Course For Beginners – Proper Dot Institute, July 2025<br>
+                <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-7637c736-03c1-4637-9302-bbef43e35a20.pdf" target="_blank">View Certificate</a>
+            </li>
+            <li>Web Development Bootcamp – Udemy<br>
+                <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-fc80116e-557c-409b-95f2-e76caecff381.pdf" target="_blank">View Certificate</a>
+            </li>
+        </ul>
+    </div>
 
-    <section>
-      <h2>Skills</h2>
-      <h3>Languages</h3>
-      <ul>
-        <li>Mother tongue: Arabic</li>
-        <li>Other: English (Understanding, Speaking, Writing)</li>
-      </ul>
+    <div class="section">
+        <h2>Projects</h2>
+        <div class="project">
+            <div class="project-title">T4Student Platform</div>
+            <div>Full-stack educational platform with AI-generated exams</div>
+            <div><strong>Tech:</strong> React, Node.js, PostgreSQL</div>
+            <div><strong>Live:</strong> <a href="http://www.t4student.onrender.com/" target="_blank">www.t4student.onrender.com</a></div>
+            <div><strong>Demo:</strong> <a href="https://drive.google.com/file/d/1Q4ZGJA0_osab2kfMe3dywV3CHofkAyOs/view" target="_blank">View Demo</a></div>
+        </div>
 
-      <h3>Communication</h3>
-      <ul>
-        <li>Excellent communication from Shine Market job</li>
-        <li>Leadership from team lead experience</li>
-        <li>Sales and web service experience from AMRA Company</li>
-        <li>Decision-making from running an import clothing business</li>
-      </ul>
+        <div class="project">
+            <div class="project-title">Jaliah Burger Restaurant System</div>
+            <div>Online food ordering & table reservation system</div>
+            <div><strong>Demo:</strong> <a href="https://drive.google.com/file/d/1-jiC15mHjvFqpHhZGpuKnNJevKdTUFII/view" target="_blank">View Demo</a></div>
+        </div>
 
-      <h3>Organisational / Managerial</h3>
-      <ul>
-        <li>Leadership of a 5-person team</li>
-      </ul>
+        <div class="project">
+            <div class="project-title">Financial-AI Platform (Frontend)</div>
+            <div>Dashboard with dynamic graphs using Recharts</div>
+            <div><strong>Tech:</strong> React (TypeScript)</div>
+        </div>
 
-      <h3>Computer</h3>
-      <ul>
-        <li>Proficient in Microsoft Office</li>
-      </ul>
+        <div class="project">
+            <div class="project-title">Berlin Vertical Solutions (Frontend)</div>
+            <div>Modern UI with animated sections</div>
+            <div><strong>Tech:</strong> React (TypeScript), styled-components</div>
+        </div>
 
-      <h3>Other</h3>
-      <ul>
-        <li>Truck Driver</li>
-        <li>Clothing Trader</li>
-      </ul>
+        <div class="project">
+            <div class="project-title">Budget Tracker (Full Stack)</div>
+            <div>Expense tracker with JWT authentication</div>
+            <div><strong>Tech:</strong> React, Node.js, PostgreSQL</div>
+        </div>
 
-      <h3>Driving Licence</h3>
-      <ul>
-        <li>Category C1</li>
-      </ul>
-    </section>
+        <div class="project">
+            <div class="project-title">Personal Blog CMS (Full Stack)</div>
+            <div>Blog system with JWT authentication, admin content management, category filter, search, dark/light mode, image uploads, and full CRUD</div>
+            <div><strong>Tech:</strong> React, Express, PostgreSQL</div>
+        </div>
+    </div>
 
-    <footer>
-      <p><strong>Projects:</strong> T4student : for vist my web 't4student.onrender.com'</p><p>, Jaltah Burger</p>
-      
-      <p><strong>Supervision Period:</strong> 2021–2023</p>
-    </footer>
-  </div>
+    <div class="section">
+        <h2>Education</h2>
+        <div><strong>Bachelor's Degree in Computer Science</strong></div>
+        <div>An-Najah National University, Nablus</div>
+        <div>2019–2023</div>
+        <div><strong>Key Courses:</strong> Data Structures, Algorithms, Software Engineering</div>
+    </div>
+
+    <div class="section">
+        <h2>Languages</h2>
+        <ul>
+            <li>Arabic (Native)</li>
+            <li>English (Intermediate – Reading, Writing, Speaking)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Soft Skills</h2>
+        <ul>
+            <li>Team Leadership (Managed 5+ member teams)</li>
+            <li>Problem Solving | Critical Thinking</li>
+            <li>Sales & Marketing Experience</li>
+            <li>Entrepreneurial Mindset</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Additional Experience</h2>
+        <ul>
+            <li>Commercial Vehicle Driver (Category C1 License)</li>
+            <li>Clothing Trader</li>
+        </ul>
+    </div>
+
+    <div class="no-print" style="text-align: center; margin-top: 30px; color: #666;">
+        Last updated: July 2025
+    </div>
 </body>
 </html>
