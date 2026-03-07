@@ -1,210 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamoun Khanfa - Resume</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #2980b9;
-            margin-top: 20px;
-        }
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .section {
-            margin-bottom: 25px;
-        }
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .skill-category {
-            flex: 1;
-            min-width: 200px;
-        }
-        .project {
-            margin-bottom: 15px;
-        }
-        .project-title {
-            font-weight: bold;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        @media print {
-            body {
-                font-size: 12pt;
-                padding: 0;
-            }
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mamoun Adle Khanfa · full‑stack portfolio</title>
+  <!-- Font Awesome 6 (free) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f7fb;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.5;
+      color: #1e293b;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 5px 10px -4px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    /* header / contact strip */
+    .header-top {
+      background: #0f172a;
+      color: white;
+      padding: 1.8rem 2.5rem 1.5rem 2.5rem;
+    }
+
+    .name-title h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+
+    .name-title .subhead {
+      font-size: 1.2rem;
+      color: #a5b4fc;
+      font-weight: 400;
+      margin-top: 0.25rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem 2.5rem;
+      margin-top: 1.5rem;
+      background: #1e293b;
+      padding: 0.9rem 1.5rem;
+      border-radius: 60px;
+      font-size: 0.95rem;
+    }
+
+    .contact-bar a, .contact-bar span {
+      color: #e2e8f0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.15s;
+    }
+
+    .contact-bar a:hover {
+      color: white;
+    }
+
+    .contact-bar i {
+      font-size: 1.1rem;
+      color: #818cf8;
+      width: 1.2rem;
+    }
+
+    .badge-group {
+      display: flex;
+      gap: 1rem;
+      margin-left: auto;
+    }
+
+    .badge-group span i {
+      color: #facc15;
+    }
+
+    /* main grid layout */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      padding: 2.5rem;
+    }
+
+    /* left column */
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #334155;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title i {
+      color: #4f46e5;
+      font-size: 1rem;
+    }
+
+    /* education block */
+    .edu-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-item h3 {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .edu-meta {
+      color: #475569;
+      font-size: 0.9rem;
+      margin: 0.2rem 0 0.5rem 0;
+    }
+
+    .course-list {
+      list-style: none;
+      font-size: 0.95rem;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      border-left: 3px solid #4f46e5;
+    }
+
+    .course-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* certifications */
+    .cert-item {
+      margin-bottom: 1rem;
+    }
+
+    .cert-item a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f1f5f9;
+      padding: 0.5rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: background 0.15s;
+      word-break: break-all;
+    }
+
+    .cert-item a:hover {
+      background: #e0e7ff;
+    }
+
+    .cert-item i {
+      color: #2563eb;
+    }
+
+    /* languages simple */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      background: #f8fafc;
+      padding: 0.6rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .lang-level {
+      color: #4b5563;
+      font-weight: 400;
+    }
+
+    /* right panel */
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .summary {
+      background: #f8fafc;
+      padding: 1.4rem 1.8rem;
+      border-radius: 1.5rem;
+      border: 1px solid #eef2f6;
+    }
+
+    .summary p {
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    /* experience cards */
+    .exp-item {
+      margin-bottom: 1.8rem;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-header h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .exp-date {
+      font-size: 0.85rem;
+      background: #e0e7ff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      color: #1e1b4b;
+      font-weight: 600;
+    }
+
+    .exp-sub {
+      font-weight: 600;
+      color: #4f46e5;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .exp-desc {
+      list-style: none;
+    }
+
+    .exp-desc li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .exp-desc li i {
+      color: #4f46e5;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+      min-width: 1rem;
+    }
+
+    /* project cards */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      background: #f8fafc;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1rem;
+      border: 1px solid #e9eef3;
+      transition: all 0.1s;
+    }
+
+    .project-card:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+    }
+
+    .project-title {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-title i {
+      color: #2563eb;
+    }
+
+    .project-stack {
+      font-size: 0.75rem;
+      background: #e2e8f0;
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      margin: 0.5rem 0 0.4rem;
+      letter-spacing: 0.01em;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    /* tech skills chips */
+    .skills-block {
+      margin-top: 0.5rem;
+    }
+
+    .skill-cat {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 1rem 0 0.4rem 0;
+      color: #0f172a;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      background: #eef2ff;
+      color: #1e1b4b;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid #c7d2fe;
+    }
+
+    .other-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .other-item {
+      background: #f1f5f9;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px dashed #cbd5e1;
+      margin: 1rem 0;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-bar {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .badge-group {
+        margin-left: 0;
+      }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .header-top {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .name-title h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* github/linkedin style */
+    .social-links i {
+      font-size: 1.1rem;
+    }
+
+    .footer-note {
+      background: #f1f4f9;
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+      color: #475569;
+      border-top: 1px solid #e2e8f0;
+    }
+  </style>
 </head>
 <body>
-    <h1>Mamoun Adle Khanfa</h1>
-    <div><strong>Frontend / Full-Stack Web Developer</strong></div>
-    
-    <div class="contact-info">
-        <span>📌 Nablus, West Bank, Palestine</span>
-        <span>📍 +972 598 897 496</span>
-        <span>💡 mamounkhanfa5@gmail.com</span>
-        <span>👍 GitHub: <a href="https://github.com/mamoun-CS" target="_blank">mamoun-CS</a></span>
-        <span>LinkedIn: <a href="https://linkedin.com/in/mamoun-khanfa-178717349/" target="_blank">mamoun-khanfa</a></span>
+<div class="container">
+  <!-- header with name + contact -->
+  <div class="header-top">
+    <div class="name-title">
+      <h1>Mamoun Adle Khanfa</h1>
+      <div class="subhead">Full Stack Developer · 3+ years experience</div>
     </div>
-
-    <div class="section">
-        <h2>Professional Summary</h2>
-        <p>Certified Frontend Developer with expertise in HTML5 and CSS3, specializing in React and Node.js development.</p>
-        <p>Passionate about building responsive, user-friendly web applications with 3+ years of hands-on experience.</p>
-        <p>Strong background in full-stack development, UI/UX principles, and project deployment.</p>
+    <div class="contact-bar">
+      <span><i class="fas fa-map-marker-alt"></i> Nablus, West Bank, Palestine</span>
+      <a href="tel:+972598897496"><i class="fas fa-phone-alt"></i> +972 598 897 496</a>
+      <a href="mailto:mamounkhanfa5@gmail.com"><i class="fas fa-envelope"></i> mamounkhanfa5@gmail.com</a>
+      <a href="#" class="social-links"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#" class="social-links"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <div class="badge-group">
+        <span><i class="fas fa-code"></i> full stack</span>
+        <span><i class="fas fa-cloud-sun"></i> AI / Nest</span>
+      </div>
     </div>
+  </div>
 
-    <div class="section">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <strong>Frontend:</strong><br>
-                HTML5 (Certified) | CSS3 (Certified)<br>
-                JavaScript (ES6+) | TypeScript<br>
-                React.js | Redux | React Router<br>
-                Tailwind CSS | Bootstrap
-            </div>
-            <div class="skill-category">
-                <strong>Backend:</strong><br>
-                Node.js | Express.js<br>
-                REST API Development
-            </div>
-            <div class="skill-category">
-                <strong>Databases:</strong><br>
-                PostgreSQL | MySQL
-            </div>
-            <div class="skill-category">
-                <strong>Tools & Platforms:</strong><br>
-                Git/GitHub | Postman | VS Code<br>
-                Figma | Vercel | Render
-            </div>
+  <!-- main two-column content -->
+  <div class="main-grid">
+    <!-- LEFT COLUMN: education, certs, languages, skills -->
+    <div class="left-panel">
+
+      <!-- Education section -->
+      <section>
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        <div class="edu-item">
+          <h3>An-Najah National University, Nablus</h3>
+          <div class="edu-meta">Bachelor's Degree, Computer Science</div>
+          <ul class="course-list">
+            <li><i class="fas fa-code"></i> Coursework: Data Structures, Algorithms, Software Engineering</li>
+          </ul>
         </div>
+      </section>
+
+      <!-- certifications -->
+      <section>
+        <div class="section-title"><i class="fas fa-certificate"></i> Certifications</div>
+        <div class="cert-item">
+          <a href="#"><i class="fas fa-external-link-alt"></i> Web Development Bootcamp – Udemy</a>
+        </div>
+        <div class="cert-item">
+          <a href="#"><i class="fas fa-external-link-alt"></i> Mastering HTML5: Beginner to Advanced 2025</a>
+        </div>
+        <div class="cert-item">
+          <a href="#"><i class="fas fa-external-link-alt"></i> CSS Complete Course For Beginners</a>
+        </div>
+        <div class="cert-item">
+          <a href="#"><i class="fas fa-external-link-alt"></i> ReactJs – The Complete Reactjs Course For Beginners</a>
+        </div>
+        <div class="cert-item">
+          <a href="#"><i class="fas fa-external-link-alt"></i> Mastering AI Agents Bootcamp</a>
+        </div>
+        <div class="cert-item">
+          <a href="#"><i class="fas fa-external-link-alt"></i> NestJS Zero to Hero – Modern Back-end</a>
+        </div>
+      </section>
+
+      <!-- languages -->
+      <section>
+        <div class="section-title"><i class="fas fa-language"></i> Languages</div>
+        <div class="lang-item"><span>Arabic</span> <span class="lang-level">Native</span></div>
+        <div class="lang-item"><span>English</span> <span class="lang-level">Intermediate (R/W/S)</span></div>
+      </section>
+
+      <!-- condensed technical skills (left panel also shows core) -->
+      <section>
+        <div class="section-title"><i class="fas fa-wrench"></i> Core Tech</div>
+        <div class="skill-tags" style="margin-bottom: 0.5rem;">
+          <span class="skill-tag">JavaScript/TS</span>
+          <span class="skill-tag">React/Next</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Nest.js</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Tailwind</span>
+        </div>
+        <div style="font-size:0.9rem; margin-top: 0.5rem;">
+          <i class="fas fa-toolbox" style="color:#4f46e5;"></i> Git, Docker, Vercel, Figma, Postman
+        </div>
+      </section>
     </div>
 
-    <div class="section">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Mastering HTML5: From Beginner to Advanced – Udemy, July 2025<br>
-                <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-6f4a6152-759b-4dc8-be36-2ad5465a393a.pdf" target="_blank">View Certificate</a>
-            </li>
-            <li>CSS Complete Course For Beginners – Proper Dot Institute, July 2025<br>
-                <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-7637c736-03c1-4637-9302-bbef43e35a20.pdf" target="_blank">View Certificate</a>
-            </li>
-            <li>Web Development Bootcamp – Udemy<br>
-                <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-fc80116e-557c-409b-95f2-e76caecff381.pdf" target="_blank">View Certificate</a>
-            </li>
-        </ul>
-    </div>
+    <!-- RIGHT COLUMN: summary, experience, projects -->
+    <div class="right-panel">
 
-    <div class="section">
-        <h2>Projects</h2>
-        <div class="project">
-            <div class="project-title">T4Student Platform</div>
-            <div>Full-stack educational platform with AI-generated exams</div>
-            <div><strong>Tech:</strong> React, Node.js, PostgreSQL</div>
-            <div><strong>Live:</strong> <a href="http://www.t4student.onrender.com/" target="_blank">www.t4student.onrender.com</a></div>
-            <div><strong>Demo:</strong> <a href="https://drive.google.com/file/d/1Q4ZGJA0_osab2kfMe3dywV3CHofkAyOs/view" target="_blank">View Demo</a></div>
+      <!-- Professional summary -->
+      <div class="summary">
+        <p><i class="fas fa-quote-left" style="color:#94a3b8; opacity:0.6;"></i> Motivated Full Stack Developer with 3 years of experience building and deploying web applications using Node.js, React.js, Next.js, Nest.js, and PostgreSQL. Skilled in designing efficient front-end interfaces and back-end solutions with proficiency in JavaScript, Python, and TypeScript. Adept at collaborating in agile teams, quickly adopting new technologies, and delivering clear documentation. <i class="fas fa-quote-right" style="color:#94a3b8; opacity:0.6;"></i></p>
+      </div>
+
+      <!-- Experience -->
+      <section>
+        <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3>AI Manager & Developer – Nova Stack</h3>
+            <span class="exp-date">Mar 2025 – Aug 2025</span>
+          </div>
+          <ul class="exp-desc">
+            <li><i class="fas fa-chevron-right"></i> Led development of AI-driven systems and intelligent tools.</li>
+            <li><i class="fas fa-chevron-right"></i> Coordinated with cross-functional teams on architecture and delivery.</li>
+          </ul>
         </div>
 
-        <div class="project">
-            <div class="project-title">Jaliah Burger Restaurant System</div>
-            <div>Online food ordering & table reservation system</div>
-            <div><strong>Demo:</strong> <a href="https://drive.google.com/file/d/1-jiC15mHjvFqpHhZGpuKnNJevKdTUFII/view" target="_blank">View Demo</a></div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3>Web Service Developer – Amra IT</h3>
+            <span class="exp-date">Mar 2024 – Mar 2025</span>
+          </div>
+          <ul class="exp-desc">
+            <li><i class="fas fa-chevron-right"></i> Designed and implemented backend services and REST APIs.</li>
+            <li><i class="fas fa-chevron-right"></i> Built secure authentication and data handling systems.</li>
+          </ul>
         </div>
 
-        <div class="project">
-            <div class="project-title">Financial-AI Platform (Frontend)</div>
-            <div>Dashboard with dynamic graphs using Recharts</div>
-            <div><strong>Tech:</strong> React (TypeScript)</div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3>Freelance Full Stack Developer</h3>
+            <span class="exp-date">2022 – 2025</span>
+          </div>
+          <ul class="exp-desc">
+            <li><i class="fas fa-chevron-right"></i> Delivered multiple full-stack web applications from concept to deployment.</li>
+            <li><i class="fas fa-chevron-right"></i> Worked directly with clients to gather requirements and deliver solutions.</li>
+          </ul>
         </div>
 
-        <div class="project">
-            <div class="project-title">Berlin Vertical Solutions (Frontend)</div>
-            <div>Modern UI with animated sections</div>
-            <div><strong>Tech:</strong> React (TypeScript), styled-components</div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3>Full Stack Developer – Codex College</h3>
+            <span class="exp-date">2025 – 2026 (1 Year)</span>
+          </div>
+          <ul class="exp-desc">
+            <li><i class="fas fa-chevron-right"></i> Developed and maintained full-stack apps using React, Node.js, PostgreSQL.</li>
+            <li><i class="fas fa-chevron-right"></i> Worked on real-world educational and administrative systems.</li>
+            <li><i class="fas fa-chevron-right"></i> Collaborated with instructors and developers to deliver scalable solutions.</li>
+            <li><i class="fas fa-chevron-right"></i> Improved system performance and code quality through refactoring.</li>
+          </ul>
         </div>
+      </section>
 
-        <div class="project">
-            <div class="project-title">Budget Tracker (Full Stack)</div>
-            <div>Expense tracker with JWT authentication</div>
-            <div><strong>Tech:</strong> React, Node.js, PostgreSQL</div>
+      <!-- Projects (selected) -->
+      <section>
+        <div class="section-title"><i class="fas fa-laptop-code"></i> Featured projects</div>
+        <div class="project-grid">
+
+          <div class="project-card">
+            <div class="project-title"><i class="fas fa-graduation-cap"></i> T4Student Platform</div>
+            <div class="project-stack">React · Node · AI</div>
+            <div class="project-desc">Full-stack educational: teachers create quizzes, AI-generated exams & performance tracking.</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title"><i class="fas fa-chart-line"></i> berlin-vertical-solutions</div>
+            <div class="project-stack">React (TS) · Recharts</div>
+            <div class="project-desc">Modern responsive frontend with dynamic graphs, smooth scroll, styled‑components.</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title"><i class="fas fa-robot"></i> financial-ai-platform</div>
+            <div class="project-stack">TypeScript · Next.js</div>
+            <div class="project-desc">Frontend for AI dashboard: typed panels, animations, modular UI.</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title"><i class="fas fa-wallet"></i> BUDGET-TRACKER</div>
+            <div class="project-stack">React · Node · PostgreSQL</div>
+            <div class="project-desc">Full-stack expense tracker, JWT auth, dark mode, charts, CRUD.</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title"><i class="fas fa-blog"></i> Personal Blog CMS</div>
+            <div class="project-stack">Express · React · JWT</div>
+            <div class="project-desc">Admin content, image upload, search, dark/light mode, categories.</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title"><i class="fas fa-people-arrows"></i> CRM System</div>
+            <div class="project-stack">Node · n8n · React</div>
+            <div class="project-desc">Lead management, roles, analytics dashboard, automation with n8n.</div>
+          </div>
+
         </div>
+      </section>
 
-        <div class="project">
-            <div class="project-title">Personal Blog CMS (Full Stack)</div>
-            <div>Blog system with JWT authentication, admin content management, category filter, search, dark/light mode, image uploads, and full CRUD</div>
-            <div><strong>Tech:</strong> React, Express, PostgreSQL</div>
+      <!-- skills in detail -->
+      <section>
+        <div class="section-title"><i class="fas fa-cogs"></i> Technical depth</div>
+        <div class="skills-block">
+          <div class="skill-cat">Languages</div>
+          <div class="skill-tags">
+            <span class="skill-tag">JavaScript</span><span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">TypeScript</span><span class="skill-tag">SQL</span><span class="skill-tag">HTML5/CSS3</span>
+          </div>
+
+          <div class="skill-cat">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">React.js</span><span class="skill-tag">Next.js</span><span class="skill-tag">Tailwind</span><span class="skill-tag">React Router</span><span class="skill-tag">Redux (basic)</span>
+          </div>
+
+          <div class="skill-cat">Backend & DB</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span><span class="skill-tag">Express.js</span><span class="skill-tag">Nest.js</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span>
+          </div>
+
+          <div class="skill-cat">Tools & deployment</div>
+          <div class="other-tools">
+            <span class="other-item">Git</span><span class="other-item">Postman</span><span class="other-item">VS Code</span><span class="other-item">Figma</span><span class="other-item">GitHub Pages</span><span class="other-item">Vercel</span><span class="other-item">MS Office</span>
+          </div>
+          <div style="margin-top: 0.7rem;"><i class="fas fa-pencil-ruler"></i> UI/UX basics · REST APIs · n8n · project deployment</div>
         </div>
+      </section>
     </div>
+  </div>
 
-    <div class="section">
-        <h2>Education</h2>
-        <div><strong>Bachelor's Degree in Computer Science</strong></div>
-        <div>An-Najah National University, Nablus</div>
-        <div>2019–2023</div>
-        <div><strong>Key Courses:</strong> Data Structures, Algorithms, Software Engineering</div>
-    </div>
-
-    <div class="section">
-        <h2>Languages</h2>
-        <ul>
-            <li>Arabic (Native)</li>
-            <li>English (Intermediate – Reading, Writing, Speaking)</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Team Leadership (Managed 5+ member teams)</li>
-            <li>Problem Solving | Critical Thinking</li>
-            <li>Sales & Marketing Experience</li>
-            <li>Entrepreneurial Mindset</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Additional Experience</h2>
-        <ul>
-            <li>Commercial Vehicle Driver (Category C1 License)</li>
-            <li>Clothing Trader</li>
-        </ul>
-    </div>
-
-    <div class="no-print" style="text-align: center; margin-top: 30px; color: #666;">
-        Last updated: July 2025
-    </div>
+  <!-- subtle footer with certification highlights -->
+  <div class="footer-note">
+    <i class="fas fa-check-circle" style="color:#22c55e;"></i> Certified: Web Dev Bootcamp · Mastering AI Agents · NestJS Zero to Hero · ReactJS<br>
+    <span style="opacity:0.7;">📁 Full‑stack code available on GitHub – always building.</span>
+  </div>
+</div>
+<!-- end container -->
 </body>
 </html>
